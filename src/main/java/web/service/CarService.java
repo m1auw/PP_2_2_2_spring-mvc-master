@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class CarService {
+public class CarService implements web.service.Service {
     private List<Car> cars = new ArrayList<>();
 
     public CarService() {
@@ -18,6 +18,7 @@ public class CarService {
         cars.add(new Car("Chevrolet", 2018, "Red"));
     }
 
+    @Override
     public List<Car> getCars(int count) {
         if (count < 0 || count >= cars.size()) {
             return cars;
